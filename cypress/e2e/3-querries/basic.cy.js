@@ -5,7 +5,7 @@ describe('Basic tests', ()=>{
         cy.visit("https://www.saucedemo.com/");
         cy.log('BEFORE EACH LOG');
     })
-    it.skip('1. User is able to sign in with valid credentials', () => {
+    it('1. User is able to sign in with valid credentials', () => {
         
         cy.get('#user-name').type("standard_user")
         cy.get('#password').type("secret_sauce")
