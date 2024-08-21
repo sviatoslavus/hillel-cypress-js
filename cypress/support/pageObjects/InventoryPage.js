@@ -1,8 +1,11 @@
 /// <reference types="cypress" />
-
+import BasePage from "./BasePage";
 
 class InventoryPage extends BasePage {
 
+    open() {
+        super.open('inventory.html/');
+    }
 
     get burgerMenu (){
         return cy.get('#react-burger-menu-btn')
@@ -18,4 +21,12 @@ class InventoryPage extends BasePage {
         this.shoppingCart.should('be.visible')
         this.dropSortingDropdown.should('be.visible')
     }
+    get item(){
+        return cy.get('.inventory_item_name').first()
+    }
+    goToItem(){
+        this.item.click()
+    }
 }
+
+export default new InventoryPage();
