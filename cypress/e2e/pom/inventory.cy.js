@@ -9,7 +9,7 @@ describe('Inventory page tests', ()=>{
     
     beforeEach(()=>{
         LoginPage.open()
-        LoginPage.login(credentials.userNames.correctUsername, credentials.passwords.correctPassword)
+        LoginPage.login(Cypress.env('USER_NAME'), Cypress.env('USER_PASSWORD'))
     })
     it('Check UI elements are visible', ()=>{
         InventoryPage.verifyVisibility()
