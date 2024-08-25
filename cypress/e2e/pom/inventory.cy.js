@@ -22,6 +22,6 @@ describe('Inventory page tests', ()=>{
         cy.url().should('include', 'cart.html')
     })
     it('Check that item page is opened after clicking on Item', ()=>{
-        InventoryPage.item.click()
+        InventoryPage.getItem(0).click()
     })
 })

@@ -2,11 +2,14 @@
 import BasePage from "./BasePage";
 
 class InventoryPage extends BasePage {
-
-    open() {
-        super.open('inventory.html/');
+    // get item(index){
+    //     return cy.get('.inventory_item_name').eq(index)
+    // }
+    //item getter
+    getItem(index = 0) {
+        return cy.get('.inventory_item_name').eq(index);
     }
-
+    
     get burgerMenu (){
         return cy.get('#react-burger-menu-btn')
     }
@@ -21,11 +24,12 @@ class InventoryPage extends BasePage {
         this.shoppingCart.should('be.visible')
         this.dropSortingDropdown.should('be.visible')
     }
-    get item(){
-        return cy.get('.inventory_item_name').first()
-    }
+    
     goToItem(){
         this.item.click()
+    }
+    open() {
+        super.open('inventory.html/');
     }
 }
 
