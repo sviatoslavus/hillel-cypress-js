@@ -9,7 +9,7 @@ describe('Inventory page tests', ()=>{
     
     beforeEach(()=>{
         LoginPage.open()
-        LoginPage.login(credentials.userNames.correctUsername, credentials.passwords.correctPassword)
+        LoginPage.login(Cypress.env('USER_NAME'), Cypress.env('USER_PASSWORD'))
     })
     it('Check UI elements are visible', ()=>{
         InventoryPage.verifyVisibility()
@@ -22,6 +22,6 @@ describe('Inventory page tests', ()=>{
         cy.url().should('include', 'cart.html')
     })
     it('Check that item page is opened after clicking on Item', ()=>{
-        InventoryPage.item.click()
+        InventoryPage.getItem(0).click()
     })
 })
